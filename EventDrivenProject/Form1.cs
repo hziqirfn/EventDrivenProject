@@ -19,7 +19,7 @@ namespace EventDrivenProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("Test");
+            Console.WriteLine("Test123");
         }
     }
 }
