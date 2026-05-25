@@ -30,11 +30,11 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -65,26 +66,20 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(218, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 26);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Email";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(198, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 32);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "LOGIN";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 162);
+            this.label2.Location = new System.Drawing.Point(52, 162);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 6;
@@ -97,15 +92,21 @@
             this.textBox2.Size = new System.Drawing.Size(220, 26);
             this.textBox2.TabIndex = 5;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(198, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 32);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "LOGIN";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Email";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(218, 102);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(220, 26);
+            this.textBox1.TabIndex = 3;
             // 
             // button2
             // 
@@ -118,6 +119,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form2
             // 
