@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EventDrivenProject
 {
-    public partial class Form4 : Form
+    public partial class FormMovieDetails : Form
     {
-        public Form4()
+        public FormMovieDetails()
         {
             InitializeComponent();
         }

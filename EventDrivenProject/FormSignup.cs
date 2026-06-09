@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace EventDrivenProject
 {
-    public partial class Form3 : Form
+    public partial class FormSignup : Form
     {
         public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;
                                       AttachDbFilename=C:\Users\haziq\Downloads\EventDrivenProject\EventDrivenProject\TicketCinema.mdf;
                                       Integrated Security = True; TrustServerCertificate=True; Encrypt=False";
         SqlConnection con = new SqlConnection(conn);
-        public Form3()
+        public FormSignup()
         {
             InitializeComponent();
         }
@@ -87,7 +87,7 @@ namespace EventDrivenProject
 
             MessageBox.Show("User registered successfully", "Success", MessageBoxButtons.OK);
             this.Close();
-            Form2 f2 = new Form2();
+            FormLogin f2 = new FormLogin();
             f2.Show();
         }
 
