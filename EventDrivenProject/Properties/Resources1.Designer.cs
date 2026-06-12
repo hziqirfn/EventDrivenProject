@@ -73,9 +73,49 @@ namespace EventDrivenProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fleak_big {
+            get {
+                object obj = ResourceManager.GetObject("Fleak_big", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nar_sataSekutuSetan_big {
+            get {
+                object obj = ResourceManager.GetObject("Nar\'sataSekutuSetan_big", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TheFurious_big {
+            get {
+                object obj = ResourceManager.GetObject("TheFurious_big", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TheSheepDetectives_big {
             get {
                 object obj = ResourceManager.GetObject("TheSheepDetectives_big", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TheSuperMarioGalaxyMovie_big {
+            get {
+                object obj = ResourceManager.GetObject("TheSuperMarioGalaxyMovie_big", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
