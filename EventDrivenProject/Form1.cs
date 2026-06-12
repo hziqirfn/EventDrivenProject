@@ -24,13 +24,13 @@ namespace EventDrivenProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            FormLogin f2 = new FormLogin();
             f2.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
+            FormSignup f3 = new FormSignup();
             f3.Show();
         }
     }

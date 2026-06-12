@@ -1,6 +1,6 @@
 ﻿namespace EventDrivenProject
 {
-    partial class Form3
+    partial class FormSignup
     {
         /// <summary>
         /// Required designer variable.

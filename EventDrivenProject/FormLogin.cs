@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace EventDrivenProject
 {
-    public partial class Form2 : Form
+    public partial class FormLogin : Form
     {
         public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;
                                       AttachDbFilename=C:\Users\haziq\Downloads\EventDrivenProject\EventDrivenProject\TicketCinema.mdf;
                                       Integrated Security = True; TrustServerCertificate=True; Encrypt=False";
         SqlConnection con = new SqlConnection(conn);
-        public Form2()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -62,7 +62,7 @@ namespace EventDrivenProject
                 return;
             }
             this.Hide();
-            Form4 f4 = new Form4();
+            FormMovieSelection f4 = new FormMovieSelection();
             f4.Show();
 
         }
