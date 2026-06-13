@@ -14,10 +14,8 @@ namespace EventDrivenProject
 {
     public partial class FormLogin : Form
     {
-        public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;
-                                      AttachDbFilename=C:\Users\haziq\Downloads\EventDrivenProject\EventDrivenProject\TicketCinema.mdf;
-                                      Integrated Security = True; TrustServerCertificate=True; Encrypt=False";
-        SqlConnection con = new SqlConnection(conn);
+        // Use |DataDirectory| so the database file can be placed alongside the app binaries
+        public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TicketCinema.mdf;Integrated Security=True;TrustServerCertificate=True;Encrypt=False";
         public FormLogin()
         {
             InitializeComponent();
@@ -25,40 +23,45 @@ namespace EventDrivenProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con.Open();
-
-            string query = "select Count(*) from [User] where Email = @email";
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            string query2 = "select Count(*) from [User] where Password = @pass";
-            SqlCommand cmd2 = new SqlCommand(query2, con);
-
-            cmd.Parameters.AddWithValue(@"email", textBox1.Text);
-            cmd2.Parameters.AddWithValue(@"pass", textBox2.Text);
-
-            int count = (int)cmd.ExecuteScalar();
-            int count2 = (int)cmd2.ExecuteScalar();
-
-            con.Close();
-
-            if (string.IsNullOrEmpty(textBox1.Text))
+            // Validate input before trying to open the database
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("Email can't be null", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Email can't be empty", "Error", MessageBoxButtons.OK);
                 return;
             }
-            else if (count == 0)
+
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                MessageBox.Show("Email not exist", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Password can't be empty", "Error", MessageBoxButtons.OK);
                 return;
             }
-            else if (string.IsNullOrEmpty(textBox2.Text))
+
+            try
             {
-                MessageBox.Show("Password can't be null", "Error", MessageBoxButtons.OK);
-                return;
+                using (SqlConnection conLocal = new SqlConnection(conn))
+                {
+                    conLocal.Open();
+
+                    // Check email+password together to avoid matching different users
+                    string query = "SELECT COUNT(*) FROM [User] WHERE Email = @email AND Password = @pass";
+                    using (SqlCommand cmd = new SqlCommand(query, conLocal))
+                    {
+                        cmd.Parameters.AddWithValue("@email", textBox1.Text);
+                        cmd.Parameters.AddWithValue("@pass", textBox2.Text);
+
+                        int count = (int)cmd.ExecuteScalar();
+                        if (count == 0)
+                        {
+                            MessageBox.Show("Email or password is incorrect", "Error", MessageBoxButtons.OK);
+                            return;
+                        }
+                    }
+                }
             }
-            else if (count2 == 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("Password is wrong", "Error", MessageBoxButtons.OK);
+                // Show the exception so the user (or developer) can see what went wrong at runtime
+                MessageBox.Show("An error occurred while trying to log in:\n" + ex.Message, "Error", MessageBoxButtons.OK);
                 return;
             }
             this.Hide();

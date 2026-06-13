@@ -30,13 +30,13 @@
         {
             this.pnlheader = new System.Windows.Forms.Panel();
             this.lbltitle = new System.Windows.Forms.Label();
-            this.lvlmoviename = new System.Windows.Forms.Label();
+            this.lblmoviename = new System.Windows.Forms.Label();
             this.lblgenre = new System.Windows.Forms.Label();
             this.lblduration = new System.Windows.Forms.Label();
             this.lbldescription = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbposter = new System.Windows.Forms.PictureBox();
             this.pnlheader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbposter)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlheader
@@ -59,16 +59,16 @@
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "🎬 Movie Details";
             // 
-            // lvlmoviename
+            // lblmoviename
             // 
-            this.lvlmoviename.AutoSize = true;
-            this.lvlmoviename.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlmoviename.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lvlmoviename.Location = new System.Drawing.Point(281, 91);
-            this.lvlmoviename.Name = "lvlmoviename";
-            this.lvlmoviename.Size = new System.Drawing.Size(102, 20);
-            this.lvlmoviename.TabIndex = 7;
-            this.lvlmoviename.Text = "Movie Name";
+            this.lblmoviename.AutoSize = true;
+            this.lblmoviename.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmoviename.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblmoviename.Location = new System.Drawing.Point(281, 91);
+            this.lblmoviename.Name = "lblmoviename";
+            this.lblmoviename.Size = new System.Drawing.Size(102, 20);
+            this.lblmoviename.TabIndex = 7;
+            this.lblmoviename.Text = "Movie Name";
             // 
             // lblgenre
             // 
@@ -103,13 +103,13 @@
             this.lbldescription.TabIndex = 10;
             this.lbldescription.Text = "Description";
             // 
-            // pictureBox1
+            // pbposter
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(37, 86);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 265);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pbposter.Location = new System.Drawing.Point(37, 86);
+            this.pbposter.Name = "pbposter";
+            this.pbposter.Size = new System.Drawing.Size(207, 265);
+            this.pbposter.TabIndex = 4;
+            this.pbposter.TabStop = false;
             // 
             // FormMovieDetails
             // 
@@ -120,15 +120,16 @@
             this.Controls.Add(this.lbldescription);
             this.Controls.Add(this.lblduration);
             this.Controls.Add(this.lblgenre);
-            this.Controls.Add(this.lvlmoviename);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblmoviename);
+            this.Controls.Add(this.pbposter);
             this.Controls.Add(this.pnlheader);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "FormMovieDetails";
             this.Text = "Movie Details";
+            this.Load += new System.EventHandler(this.FormMovieDetails_Load);
             this.pnlheader.ResumeLayout(false);
             this.pnlheader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbposter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,8 +139,8 @@
 
         private System.Windows.Forms.Panel pnlheader;
         private System.Windows.Forms.Label lbltitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lvlmoviename;
+        private System.Windows.Forms.PictureBox pbposter;
+        private System.Windows.Forms.Label lblmoviename;
         private System.Windows.Forms.Label lblgenre;
         private System.Windows.Forms.Label lblduration;
         private System.Windows.Forms.Label lbldescription;

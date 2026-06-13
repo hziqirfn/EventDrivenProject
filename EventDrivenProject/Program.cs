@@ -16,7 +16,9 @@ namespace EventDrivenProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            // Ensure |DataDirectory| resolves to the application's base directory so the MDF can be attached from bin\Debug
+            AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+            Application.Run(new FormLogin());
         }
     }
 }

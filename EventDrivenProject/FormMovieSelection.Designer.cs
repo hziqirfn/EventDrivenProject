@@ -128,7 +128,7 @@
             this.Name = "FormMovieSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Smart Cinema Booking - Select Movie";
-            this.Load += new System.EventHandler(this.Form4_Load);
+            this.Load += new System.EventHandler(this.FormMovieSelection_Load);
             this.pnlheader.ResumeLayout(false);
             this.pnlheader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbposter)).EndInit();

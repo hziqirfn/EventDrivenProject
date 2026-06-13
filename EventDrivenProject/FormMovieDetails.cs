@@ -12,9 +12,20 @@ namespace EventDrivenProject
 {
     public partial class FormMovieDetails : Form
     {
-        public FormMovieDetails()
+        private Movie movie;
+        public FormMovieDetails(Movie movie)
         {
             InitializeComponent();
+
+            this.movie = movie;
+
+            lblmoviename.Text = movie.Name;
+            pbposter.Image = movie.Poster;
+        }
+
+        private void FormMovieDetails_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

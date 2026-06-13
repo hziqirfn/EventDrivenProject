@@ -1,0 +1,26 @@
+Place the real TicketCinema.mdf database file in the project root (next to EventDrivenProject.csproj).
+
+Steps to add the database to the project and prepare for teammates:
+
+1) Copy your existing TicketCinema.mdf into the repository root:
+   C:\Users\DELL\source\repos\hziqirfn\EventDrivenProject\TicketCinema.mdf
+
+2) In Visual Studio (after it is closed and reopened):
+   - Solution Explorer → Show All Files → right-click TicketCinema.mdf → Include In Project.
+   - Right-click TicketCinema.mdf → Properties → set "Copy to Output Directory" = "Copy if newer".
+
+3) Commit and push the file (note: large binary):
+   git add TicketCinema.mdf
+   git commit -m "Add TicketCinema.mdf database file"
+   git push origin master
+
+4) If you previously attached the DB in LocalDB, detach it so the app can attach the copied file at runtime:
+   - Tools: View → SQL Server Object Explorer → (LocalDB)\MSSQLLocalDB → right-click TicketCinema → Delete (detach)
+   - Or from a Developer PowerShell (if needed):
+     sqllocaldb stop MSSQLLocalDB
+     sqlcmd -S "(localdb)\MSSQLLocalDB" -Q "EXEC sp_detach_db 'TicketCinema'"
+     sqllocaldb start MSSQLLocalDB
+
+Notes:
+- Committing .mdf increases repo size. Consider using a shared DB server or migration scripts for production.
+- After adding the file and reopening Visual Studio, I can modify the .csproj to include a copy rule automatically if you want — reply "ready" after Visual Studio is closed and I'll update the project file for you.
