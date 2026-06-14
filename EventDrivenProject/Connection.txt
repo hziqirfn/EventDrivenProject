@@ -1,1 +1,0 @@
-﻿Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\EventDrivenProject\EventDrivenProject\TicketCinema.mdf;Integrated Security=True
