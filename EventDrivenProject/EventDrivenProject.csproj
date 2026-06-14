@@ -162,7 +162,14 @@
     <None Include="TheFurious_big.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TicketCinema.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TicketCinema.README.txt" />
+    <Content Include="TicketCinema_log.ldf">
+      <DependentUpon>TicketCinema.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
