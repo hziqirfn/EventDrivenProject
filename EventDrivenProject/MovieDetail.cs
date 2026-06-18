@@ -18,16 +18,17 @@ namespace EventDrivenProject
         {
             InitializeComponent();
             movies = movie;
-            UpdateMovie();
+
+            this.Load += (s, e) => UpdateMovie();
         }
 
         private void UpdateMovie()
         {
-            label11.Text = movies.Title;
-            label10.Text = movies.Genre;
-            label9.Text = movies.Duration;
-            label7.Text = movies.ReleaseDate.ToString();
-            label8.Text = movies.Description ?? "-";
+            lbltxtmoviename.Text = movies.Title;
+            lbltextgenre.Text = movies.Genre;
+            lbltxtduration.Text = movies.Duration;
+            lbltxtrelease.Text = movies.ReleaseDate?.ToString("dd/MM/yyyy") ?? "-";
+            lbltxtdescription.Text = movies.Description ?? "-";
 
             string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", movies.Image);
 
@@ -43,16 +44,43 @@ namespace EventDrivenProject
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void lbltxtmoviename_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void lbltextgenre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltxtduration_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltxtrelease_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltxtdescription_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnbuyticket_Click(object sender, EventArgs e)
         {
             //this.Hide();
             BuyTicket buy = new BuyTicket(movies.MovieId);
             buy.ShowDialog();
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -30,19 +30,19 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            lblmoviename = new Label();
+            lblgenre = new Label();
+            lblduration = new Label();
+            lbldescription = new Label();
             pictureBox1 = new PictureBox();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            lblrelease = new Label();
+            lbltxtrelease = new Label();
+            lbltxtdescription = new Label();
+            lbltxtduration = new Label();
+            lbltextgenre = new Label();
+            lbltxtmoviename = new Label();
+            btnbuyticket = new Button();
+            btnback = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -51,174 +51,194 @@
             // 
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1066, 94);
+            panel1.Size = new Size(853, 75);
             panel1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 28);
+            label1.Location = new Point(10, 22);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(203, 35);
+            label1.Size = new Size(171, 29);
             label1.TabIndex = 0;
             label1.Text = "🎬 Movie Detail\r\n";
             // 
-            // label2
+            // lblmoviename
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(415, 176);
-            label2.Name = "label2";
-            label2.Size = new Size(138, 28);
-            label2.TabIndex = 5;
-            label2.Text = "Movie Name:";
+            lblmoviename.AutoSize = true;
+            lblmoviename.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblmoviename.Location = new Point(302, 108);
+            lblmoviename.Margin = new Padding(2, 0, 2, 0);
+            lblmoviename.Name = "lblmoviename";
+            lblmoviename.Size = new Size(116, 23);
+            lblmoviename.TabIndex = 5;
+            lblmoviename.Text = "Movie Name:";
             // 
-            // label3
+            // lblgenre
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label3.Location = new Point(415, 230);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 28);
-            label3.TabIndex = 6;
-            label3.Text = "Genre:";
+            lblgenre.AutoSize = true;
+            lblgenre.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblgenre.Location = new Point(302, 151);
+            lblgenre.Margin = new Padding(2, 0, 2, 0);
+            lblgenre.Name = "lblgenre";
+            lblgenre.Size = new Size(62, 23);
+            lblgenre.TabIndex = 6;
+            lblgenre.Text = "Genre:";
             // 
-            // label4
+            // lblduration
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label4.Location = new Point(415, 286);
-            label4.Name = "label4";
-            label4.Size = new Size(101, 28);
-            label4.TabIndex = 6;
-            label4.Text = "Duration:";
+            lblduration.AutoSize = true;
+            lblduration.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblduration.Location = new Point(302, 196);
+            lblduration.Margin = new Padding(2, 0, 2, 0);
+            lblduration.Name = "lblduration";
+            lblduration.Size = new Size(86, 23);
+            lblduration.TabIndex = 6;
+            lblduration.Text = "Duration:";
             // 
-            // label5
+            // lbldescription
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label5.Location = new Point(414, 401);
-            label5.Name = "label5";
-            label5.Size = new Size(126, 28);
-            label5.TabIndex = 6;
-            label5.Text = "Description:";
+            lbldescription.AutoSize = true;
+            lbldescription.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lbldescription.Location = new Point(301, 288);
+            lbldescription.Margin = new Padding(2, 0, 2, 0);
+            lbldescription.Name = "lbldescription";
+            lbldescription.Size = new Size(107, 23);
+            lbldescription.TabIndex = 6;
+            lbldescription.Text = "Description:";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(32, 119);
+            pictureBox1.Location = new Point(26, 95);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(320, 448);
+            pictureBox1.Size = new Size(256, 358);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // label6
+            // lblrelease
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label6.Location = new Point(413, 344);
-            label6.Name = "label6";
-            label6.Size = new Size(140, 28);
-            label6.TabIndex = 8;
-            label6.Text = "Release Date:";
+            lblrelease.AutoSize = true;
+            lblrelease.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblrelease.Location = new Point(300, 242);
+            lblrelease.Margin = new Padding(2, 0, 2, 0);
+            lblrelease.Name = "lblrelease";
+            lblrelease.Size = new Size(117, 23);
+            lblrelease.TabIndex = 8;
+            lblrelease.Text = "Release Date:";
             // 
-            // label7
+            // lbltxtrelease
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10F);
-            label7.Location = new Point(559, 344);
-            label7.Name = "label7";
-            label7.Size = new Size(45, 28);
-            label7.TabIndex = 13;
-            label7.Text = "text";
+            lbltxtrelease.AutoSize = true;
+            lbltxtrelease.Font = new Font("Segoe UI", 10F);
+            lbltxtrelease.Location = new Point(417, 242);
+            lbltxtrelease.Margin = new Padding(2, 0, 2, 0);
+            lbltxtrelease.Name = "lbltxtrelease";
+            lbltxtrelease.Size = new Size(39, 23);
+            lbltxtrelease.TabIndex = 13;
+            lbltxtrelease.Text = "text";
+            lbltxtrelease.Click += lbltxtrelease_Click;
             // 
-            // label8
+            // lbltxtdescription
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10F);
-            label8.Location = new Point(547, 401);
-            label8.Name = "label8";
-            label8.Size = new Size(45, 28);
-            label8.TabIndex = 10;
-            label8.Text = "text";
+            lbltxtdescription.Font = new Font("Segoe UI", 10F);
+            lbltxtdescription.Location = new Point(417, 288);
+            lbltxtdescription.Margin = new Padding(2, 0, 2, 0);
+            lbltxtdescription.Name = "lbltxtdescription";
+            lbltxtdescription.Size = new Size(351, 103);
+            lbltxtdescription.TabIndex = 10;
+            lbltxtdescription.Text = "text";
+            lbltxtdescription.Click += lbltxtdescription_Click;
             // 
-            // label9
+            // lbltxtduration
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10F);
-            label9.Location = new Point(526, 286);
-            label9.Name = "label9";
-            label9.Size = new Size(45, 28);
-            label9.TabIndex = 11;
-            label9.Text = "text";
+            lbltxtduration.AutoSize = true;
+            lbltxtduration.Font = new Font("Segoe UI", 10F);
+            lbltxtduration.Location = new Point(417, 196);
+            lbltxtduration.Margin = new Padding(2, 0, 2, 0);
+            lbltxtduration.Name = "lbltxtduration";
+            lbltxtduration.Size = new Size(39, 23);
+            lbltxtduration.TabIndex = 11;
+            lbltxtduration.Text = "text";
+            lbltxtduration.Click += lbltxtduration_Click;
             // 
-            // label10
+            // lbltextgenre
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10F);
-            label10.Location = new Point(502, 230);
-            label10.Name = "label10";
-            label10.Size = new Size(45, 28);
-            label10.TabIndex = 12;
-            label10.Text = "text";
+            lbltextgenre.AutoSize = true;
+            lbltextgenre.Font = new Font("Segoe UI", 10F);
+            lbltextgenre.Location = new Point(417, 151);
+            lbltextgenre.Margin = new Padding(2, 0, 2, 0);
+            lbltextgenre.Name = "lbltextgenre";
+            lbltextgenre.Size = new Size(39, 23);
+            lbltextgenre.TabIndex = 12;
+            lbltextgenre.Text = "text";
+            lbltextgenre.Click += lbltextgenre_Click;
             // 
-            // label11
+            // lbltxtmoviename
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 10F);
-            label11.Location = new Point(559, 176);
-            label11.Name = "label11";
-            label11.Size = new Size(45, 28);
-            label11.TabIndex = 9;
-            label11.Text = "text";
+            lbltxtmoviename.AutoSize = true;
+            lbltxtmoviename.Font = new Font("Segoe UI", 10F);
+            lbltxtmoviename.Location = new Point(417, 108);
+            lbltxtmoviename.Margin = new Padding(2, 0, 2, 0);
+            lbltxtmoviename.Name = "lbltxtmoviename";
+            lbltxtmoviename.Size = new Size(39, 23);
+            lbltxtmoviename.TabIndex = 9;
+            lbltxtmoviename.Text = "text";
+            lbltxtmoviename.Click += lbltxtmoviename_Click;
             // 
-            // button1
+            // btnbuyticket
             // 
-            button1.BackColor = Color.Gainsboro;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(379, 529);
-            button1.Name = "button1";
-            button1.Size = new Size(127, 52);
-            button1.TabIndex = 14;
-            button1.Text = "Back";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnbuyticket.BackColor = Color.Gainsboro;
+            btnbuyticket.FlatStyle = FlatStyle.Popup;
+            btnbuyticket.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnbuyticket.Location = new Point(679, 447);
+            btnbuyticket.Margin = new Padding(2);
+            btnbuyticket.Name = "btnbuyticket";
+            btnbuyticket.Size = new Size(151, 42);
+            btnbuyticket.TabIndex = 16;
+            btnbuyticket.Text = "Buy Ticket Now";
+            btnbuyticket.UseVisualStyleBackColor = false;
+            btnbuyticket.Click += btnbuyticket_Click;
             // 
-            // button2
+            // btnback
             // 
-            button2.BackColor = Color.Gainsboro;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(851, 529);
-            button2.Name = "button2";
-            button2.Size = new Size(189, 52);
-            button2.TabIndex = 15;
-            button2.Text = "Buy Ticket Now";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnback.BackColor = Color.Gainsboro;
+            btnback.FlatStyle = FlatStyle.Popup;
+            btnback.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnback.Location = new Point(316, 438);
+            btnback.Margin = new Padding(2);
+            btnback.Name = "btnback";
+            btnback.Size = new Size(102, 42);
+            btnback.TabIndex = 17;
+            btnback.Text = "Back";
+            btnback.UseVisualStyleBackColor = false;
+            btnback.Click += btnback_Click;
             // 
             // MovieDetail
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1066, 593);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label7);
-            Controls.Add(label8);
-            Controls.Add(label9);
-            Controls.Add(label10);
-            Controls.Add(label11);
-            Controls.Add(label6);
+            ClientSize = new Size(853, 500);
+            Controls.Add(btnback);
+            Controls.Add(btnbuyticket);
+            Controls.Add(lbltxtrelease);
+            Controls.Add(lbltxtdescription);
+            Controls.Add(lbltxtduration);
+            Controls.Add(lbltextgenre);
+            Controls.Add(lbltxtmoviename);
+            Controls.Add(lblrelease);
             Controls.Add(pictureBox1);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(lbldescription);
+            Controls.Add(lblduration);
+            Controls.Add(lblgenre);
+            Controls.Add(lblmoviename);
             Controls.Add(panel1);
+            Margin = new Padding(2);
             Name = "MovieDetail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Smart Cinema Booking - Movie Detail";
@@ -233,18 +253,18 @@
 
         private Panel panel1;
         private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
+        private Label lblmoviename;
+        private Label lblgenre;
+        private Label lblduration;
+        private Label lbldescription;
         private PictureBox pictureBox1;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Button button1;
-        private Button button2;
+        private Label lblrelease;
+        private Label lbltxtrelease;
+        private Label lbltxtdescription;
+        private Label lbltxtduration;
+        private Label lbltextgenre;
+        private Label lbltxtmoviename;
+        private Button btnbuyticket;
+        private Button btnback;
     }
 }

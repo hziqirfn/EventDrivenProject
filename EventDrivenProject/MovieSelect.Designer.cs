@@ -30,103 +30,115 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
+            pbmovie = new PictureBox();
             label3 = new Label();
-            label4 = new Label();
+            lblmoviename = new Label();
+            btnnext = new Button();
+            btnprev = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbmovie).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1066, 94);
+            panel1.Size = new Size(853, 75);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 28);
+            label1.Location = new Point(10, 22);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(318, 35);
+            label1.Size = new Size(267, 29);
             label1.TabIndex = 0;
             label1.Text = "🎬 Smart Cinema Booking";
             // 
-            // pictureBox1
+            // pbmovie
             // 
-            pictureBox1.Location = new Point(275, 116);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(500, 563);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            pictureBox1.DoubleClick += pictureBox1_DoubleClick;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(840, 352);
-            button1.Name = "button1";
-            button1.Size = new Size(88, 72);
-            button1.TabIndex = 2;
-            button1.Text = "▶";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(110, 352);
-            button2.Name = "button2";
-            button2.Size = new Size(88, 72);
-            button2.TabIndex = 3;
-            button2.Text = "◀";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            pbmovie.Image = Properties.Resources.TheSuperMarioGalaxyMovie_big;
+            pbmovie.Location = new Point(220, 93);
+            pbmovie.Margin = new Padding(2);
+            pbmovie.Name = "pbmovie";
+            pbmovie.Size = new Size(400, 450);
+            pbmovie.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbmovie.TabIndex = 1;
+            pbmovie.TabStop = false;
+            pbmovie.Click += pbmovie_Click;
+            pbmovie.DoubleClick += pictureBox1_DoubleClick;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Comic Sans MS", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(367, 741);
+            label3.Location = new Point(306, 588);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(264, 23);
+            label3.Size = new Size(234, 19);
             label3.TabIndex = 5;
             label3.Text = "Double click poster to view details";
             // 
-            // label4
+            // lblmoviename
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(348, 682);
-            label4.Name = "label4";
-            label4.Size = new Size(156, 35);
-            label4.TabIndex = 6;
-            label4.Text = "Movie Name";
+            lblmoviename.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblmoviename.Location = new Point(220, 545);
+            lblmoviename.Margin = new Padding(2, 0, 2, 0);
+            lblmoviename.Name = "lblmoviename";
+            lblmoviename.Size = new Size(400, 29);
+            lblmoviename.TabIndex = 6;
+            lblmoviename.Text = "Movie Name";
+            lblmoviename.TextAlign = ContentAlignment.MiddleCenter;
+            lblmoviename.Click += lblmoviename_Click;
+            // 
+            // btnnext
+            // 
+            btnnext.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnnext.Location = new Point(675, 282);
+            btnnext.Margin = new Padding(2);
+            btnnext.Name = "btnnext";
+            btnnext.Size = new Size(70, 58);
+            btnnext.TabIndex = 7;
+            btnnext.Text = "▶";
+            btnnext.UseVisualStyleBackColor = true;
+            btnnext.Click += btnnext_Click;
+            // 
+            // btnprev
+            // 
+            btnprev.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnprev.Location = new Point(100, 282);
+            btnprev.Margin = new Padding(2);
+            btnprev.Name = "btnprev";
+            btnprev.Size = new Size(70, 58);
+            btnprev.TabIndex = 8;
+            btnprev.Text = "◀";
+            btnprev.UseVisualStyleBackColor = true;
+            btnprev.Click += btnprev_Click;
             // 
             // MovieSelect
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1066, 770);
-            Controls.Add(label4);
+            ClientSize = new Size(853, 616);
+            Controls.Add(btnnext);
+            Controls.Add(lblmoviename);
             Controls.Add(label3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(pictureBox1);
+            Controls.Add(btnprev);
+            Controls.Add(pbmovie);
             Controls.Add(panel1);
+            Margin = new Padding(2);
             Name = "MovieSelect";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Smart Cinema Booking - Select Movie";
+            Load += MovieSelect_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbmovie).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,11 +147,12 @@
 
         private Panel panel1;
         private Label label1;
-        private PictureBox pictureBox1;
-        private Button button1;
-        private Button button2;
+        private PictureBox pbmovie;
+        private Button btnprev;
+        private Button btnnext;
         private Label label3;
         private Label label2;
-        private Label label4;
+        private Label lblmoviename;
+      
     }
 }

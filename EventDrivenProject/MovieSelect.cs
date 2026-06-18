@@ -17,17 +17,91 @@ namespace EventDrivenProject
         int currentIndex = 0;
         public MovieSelect()
         {
-            InitializeComponent();
-            LoadMovies();
-        }
+            InitializeComponent();   
 
-        private void LoadMovies()
+            movies = new List<Movie>
+    {
+        new Movie
         {
-            movies = Helper.db.Movies.ToList();
+            Title = "Polong",
+            Genre = "Horror / Supernatural",
+            Duration = "1h 45m",
+            ReleaseDate = new DateOnly(2026, 4, 10),
+            Description = "A mysterious spirit known as Polong begins haunting a small village, feeding on fear and controlling its victims through dark possession.",
+            Image = "Polong_big.jpg"
+        },
+
+        new Movie
+        {
+            Title = "The Furious",
+            Genre = "Action / Crime",
+            Duration = "2h 10m",
+            ReleaseDate = new DateOnly(2023, 6, 15),
+            Description = "An underground racer gets pulled into a high-stakes criminal syndicate where speed is the only way to survive.",
+            Image = "TheFurious_big.jpg"
+        },
+
+        new Movie
+        {
+            Title = "The Sheep Detectives",
+            Genre = "Comedy / Mystery",
+            Duration = "1h 50m",
+            ReleaseDate = new DateOnly(2025, 3, 20),
+            Description = "A group of unlikely animal detectives uncover bizarre farm mysteries that escalate into a nationwide conspiracy.",
+            Image = "TheSheepDetectives_big.jpg"
+        },
+
+        new Movie
+        {
+            Title = "The Super Mario Galaxy Movie",
+            Genre = "Animation / Adventure / Sci-Fi",
+            Duration = "1h 58m",
+            ReleaseDate = new DateOnly(2026, 4, 10),
+            Description = "Mario embarks on a cosmic journey across galaxies to rescue Princess Peach and stop a universal threat led by cosmic forces.",
+            Image = "TheSuperMarioGalaxyMovie_big.jpg"
+        }
+    };
+
+            currentIndex = 0;
             UpdateMovie();
+            }
+
+
+        private void UpdateMovie()
+        {
+            if (movies.Count == 0) return;
+
+            var movie = movies[currentIndex];
+            lblmoviename.Text = movie.Title;
+
+            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", movie.Image);
+
+            if (pbmovie.Image != null)
+            {
+                pbmovie.Image.Dispose();
+                pbmovie.Image = null;
+            }
+
+            if (File.Exists(imagePath))
+            {
+                pbmovie.Image = Image.FromFile(imagePath);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            if (movies.Count == 0) return;
+
+            MovieDetail details = new MovieDetail(movies[currentIndex]);
+            details.ShowDialog();
+        }
+
+        private void lblmoviename_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnnext_Click(object sender, EventArgs e)
         {
             if (movies.Count == 0) return;
 
@@ -40,7 +114,7 @@ namespace EventDrivenProject
             UpdateMovie();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnprev_Click(object sender, EventArgs e)
         {
             if (movies.Count == 0) return;
 
@@ -53,33 +127,14 @@ namespace EventDrivenProject
             UpdateMovie();
         }
 
-        private void UpdateMovie()
+        private void MovieSelect_Load(object sender, EventArgs e)
         {
-            if (movies.Count == 0) return;
 
-            var movie = movies[currentIndex];
-            label4.Text = movie.Title;
-
-            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", movie.Image);
-
-            if (pictureBox1.Image != null)
-            {
-                pictureBox1.Image.Dispose();
-                pictureBox1.Image = null;
-            }
-
-            if (File.Exists(imagePath))
-            {
-                pictureBox1.Image = Image.FromFile(imagePath);
-            }
         }
 
-        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        private void pbmovie_Click(object sender, EventArgs e)
         {
-            if (movies.Count == 0) return;
 
-            MovieDetail details = new MovieDetail(movies[currentIndex]);
-            details.ShowDialog();
         }
     }
 }
