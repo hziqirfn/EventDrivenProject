@@ -16,5 +16,10 @@ namespace EventDrivenProject
         {
             InitializeComponent();
         }
+
+        private void SelectSeat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -65,6 +65,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            button2 = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // seatC8
@@ -501,7 +503,8 @@
             // greylbl
             // 
             greylbl.BackColor = SystemColors.ButtonShadow;
-            greylbl.Location = new Point(37, 415);
+            greylbl.Font = new Font("Segoe UI", 9F);
+            greylbl.Location = new Point(39, 410);
             greylbl.Name = "greylbl";
             greylbl.Size = new Size(25, 25);
             greylbl.TabIndex = 110;
@@ -509,7 +512,8 @@
             // redlbl
             // 
             redlbl.BackColor = Color.Red;
-            redlbl.Location = new Point(248, 415);
+            redlbl.Font = new Font("Segoe UI", 9F);
+            redlbl.Location = new Point(250, 410);
             redlbl.Name = "redlbl";
             redlbl.Size = new Size(25, 25);
             redlbl.TabIndex = 111;
@@ -517,7 +521,8 @@
             // greenlbl
             // 
             greenlbl.BackColor = Color.ForestGreen;
-            greenlbl.Location = new Point(145, 415);
+            greenlbl.Font = new Font("Segoe UI", 9F);
+            greenlbl.Location = new Point(147, 410);
             greenlbl.Name = "greenlbl";
             greenlbl.Size = new Size(25, 25);
             greenlbl.TabIndex = 112;
@@ -525,7 +530,8 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(68, 420);
+            label1.Font = new Font("Segoe UI", 9F);
+            label1.Location = new Point(70, 415);
             label1.Name = "label1";
             label1.Size = new Size(71, 20);
             label1.TabIndex = 113;
@@ -534,7 +540,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(176, 420);
+            label2.Font = new Font("Segoe UI", 9F);
+            label2.Location = new Point(178, 415);
             label2.Name = "label2";
             label2.Size = new Size(66, 20);
             label2.TabIndex = 114;
@@ -543,17 +550,46 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(279, 420);
+            label3.Font = new Font("Segoe UI", 9F);
+            label3.Location = new Point(281, 415);
             label3.Name = "label3";
             label3.Size = new Size(60, 20);
             label3.TabIndex = 115;
             label3.Text = "Booked";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Gainsboro;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(675, 401);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(120, 42);
+            button2.TabIndex = 116;
+            button2.Text = "Payment";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Gainsboro;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(555, 401);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(102, 42);
+            button1.TabIndex = 117;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
             // 
             // SelectSeat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 474);
+            Controls.Add(button1);
+            Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -595,6 +631,7 @@
             Name = "SelectSeat";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Smart Cinema Booking - Select Seat";
+            Load += SelectSeat_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -638,5 +675,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button button2;
+        private Button button1;
     }
 }
