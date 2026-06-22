@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <Content Include="Connection.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\TheFurious_big.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -78,6 +78,12 @@
     <None Update="DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="TicketCinema.mdf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="TicketCinema_log.ldf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

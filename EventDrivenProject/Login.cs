@@ -41,8 +41,18 @@ namespace EventDrivenProject
                 MessageBox.Show("Login successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
-                MovieSelect movieSelect = new MovieSelect();
-                movieSelect.ShowDialog();
+
+                if (textBox1.Text.Contains("@admin"))
+                {
+                    AdminPanel admin = new AdminPanel();
+                    admin.Show();
+                }
+                else
+                {
+                    MovieSelect movieSelect = new MovieSelect();
+                    movieSelect.Show();
+                }
+
                 return;
             }
             MessageBox.Show("Login failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
