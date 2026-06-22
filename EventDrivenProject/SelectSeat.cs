@@ -104,9 +104,22 @@ namespace EventDrivenProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Form paymentForm = new Payment(hallId);
-            paymentForm.Show();
+            var selectedSeats = panel1.Controls
+                .OfType<CheckBox>()
+                .Where(c => c.Checked)
+                .Select(c => c.Text)
+                .ToList();
+
+            if (selectedSeats.Count > 0)
+            {
+                this.Close();
+                Form paymentForm = new Payment(hallId);
+                paymentForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select at least one seat.", "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
