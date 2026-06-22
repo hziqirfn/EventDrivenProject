@@ -92,7 +92,7 @@ namespace EventDrivenProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SelectSeat seat = new SelectSeat();
+            SelectSeat seat = new SelectSeat(showId);
             seat.Show();
         }
     }

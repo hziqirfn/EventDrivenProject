@@ -23,6 +23,7 @@ namespace EventDrivenProject
     {
         new Movie
         {
+            MovieId = 1,
             Title = "Polong",
             Genre = "Horror / Supernatural",
             Duration = "1h 45m",
@@ -33,6 +34,7 @@ namespace EventDrivenProject
 
         new Movie
         {
+            MovieId = 2,
             Title = "The Furious",
             Genre = "Action / Crime",
             Duration = "2h 10m",
@@ -43,6 +45,7 @@ namespace EventDrivenProject
 
         new Movie
         {
+            MovieId = 4,
             Title = "The Sheep Detectives",
             Genre = "Comedy / Mystery",
             Duration = "1h 50m",
@@ -53,6 +56,7 @@ namespace EventDrivenProject
 
         new Movie
         {
+            MovieId = 8,
             Title = "The Super Mario Galaxy Movie",
             Genre = "Animation / Adventure / Sci-Fi",
             Duration = "1h 58m",

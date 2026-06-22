@@ -24,6 +24,8 @@ namespace EventDrivenProject
 
         private void UpdateMovie()
         {
+
+            Hallidlabel.Text = movies.MovieId.ToString();
             lbltxtmoviename.Text = movies.Title;
             lbltextgenre.Text = movies.Genre;
             lbltxtduration.Text = movies.Duration;

@@ -1,0 +1,42 @@
+ShowTime
+
+- starttime time 
+- endtime time
+
+Movie
+
+- duration nvarchar(50)
+
+Hall
+
+- [RoomNumber] INT NOT NULL,
+- [HallType]	 NVARCHAR(50)  NOT NULL,
+
+
+identity(1, 1) primary key
+
+Example data 
+Cinema
+1	GSC - Dataran Pahlawan	Dataran Pahlawan Melaka Megamall, Bandar Hilir, 75000 Melaka
+2	TGV - AEON Bandaraya Melaka	AEON Mall Bandaraya Melaka, Jalan Lagenda, 75400 Melaka
+3	MBO - Melaka Mall	Melaka Mall, Jalan Tun Abdul Razak, 75400 Melaka
+4	GSC - AEON Melaka	AEON Mall Ayer Keroh, Lebuh Ayer Keroh, 75450 Melaka
+
+Hall
+1	1	1	Hall 1 - Standard	BIG	120
+2	1	1	Hall 2 - VIP	IMAX	80
+4	1	2	Hall A	2D	150
+6	2	2	Hall B	2D	150
+8	2	4	Premium Hall	Dolby Atmos	110
+
+Movie
+1	The Super Mario Galaxy Movie	TheSuperMarioGalaxyMovie_big.jpg	Animation	1 hr 38 mins	NULL	1/4/2026
+2	The Furious: Pertaruhan Maruah	TheFurious_big.jpg	Action	1 hr 46 mins	NULL	28/5/2026
+3	The Sheep Detectives	TheSheepDetectives_big.jpg	Comedy	1 hr 50 mins	NULL	27/5/2026
+4	Polong	Polong_big.jpg	Horror	2 hr 1 min	NULL	28/5/2026
+
+ShowTime
+3	1	1	23/6/2026	1/1/1900 10:00:00 AM	1/1/1900 11:38:00 AM
+4	1	2	23/6/2026	1/1/1900 2:00:00 AM	1/1/1900 3:38:00 AM
+5	1	1	24/6/2026	1/1/1900 4:00:00 AM	1/1/1900 5:58:00 AM
+6	2	2	23/6/2026	1/1/1900 3:00:00 AM	1/1/1900 4:46:00 AM
