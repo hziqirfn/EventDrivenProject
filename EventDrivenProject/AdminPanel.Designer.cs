@@ -44,10 +44,9 @@
             LogoutBtn.BackColor = Color.Gainsboro;
             LogoutBtn.FlatStyle = FlatStyle.Popup;
             LogoutBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LogoutBtn.Location = new Point(700, 11);
-            LogoutBtn.Margin = new Padding(2);
+            LogoutBtn.Location = new Point(912, 15);
             LogoutBtn.Name = "LogoutBtn";
-            LogoutBtn.Size = new Size(89, 32);
+            LogoutBtn.Size = new Size(127, 53);
             LogoutBtn.TabIndex = 119;
             LogoutBtn.Text = "Logout";
             LogoutBtn.UseVisualStyleBackColor = false;
@@ -57,9 +56,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(13, 15);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(277, 45);
+            label1.Size = new Size(417, 65);
             label1.TabIndex = 120;
             label1.Text = "Welcome Admin!";
             // 
@@ -68,10 +68,9 @@
             btnViewUsers.BackColor = Color.Gainsboro;
             btnViewUsers.FlatStyle = FlatStyle.Popup;
             btnViewUsers.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnViewUsers.Location = new Point(64, 343);
-            btnViewUsers.Margin = new Padding(2);
+            btnViewUsers.Location = new Point(40, 446);
             btnViewUsers.Name = "btnViewUsers";
-            btnViewUsers.Size = new Size(89, 32);
+            btnViewUsers.Size = new Size(127, 53);
             btnViewUsers.TabIndex = 122;
             btnViewUsers.Text = "View Users";
             btnViewUsers.UseVisualStyleBackColor = false;
@@ -82,10 +81,9 @@
             btnDeleteUsers.BackColor = Color.Gainsboro;
             btnDeleteUsers.FlatStyle = FlatStyle.Popup;
             btnDeleteUsers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDeleteUsers.Location = new Point(64, 407);
-            btnDeleteUsers.Margin = new Padding(2);
+            btnDeleteUsers.Location = new Point(40, 529);
             btnDeleteUsers.Name = "btnDeleteUsers";
-            btnDeleteUsers.Size = new Size(89, 32);
+            btnDeleteUsers.Size = new Size(127, 53);
             btnDeleteUsers.TabIndex = 123;
             btnDeleteUsers.Text = "Delete Users";
             btnDeleteUsers.UseVisualStyleBackColor = false;
@@ -96,10 +94,9 @@
             btnViewSeats.BackColor = Color.Gainsboro;
             btnViewSeats.FlatStyle = FlatStyle.Popup;
             btnViewSeats.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnViewSeats.Location = new Point(674, 343);
-            btnViewSeats.Margin = new Padding(2);
+            btnViewSeats.Location = new Point(912, 446);
             btnViewSeats.Name = "btnViewSeats";
-            btnViewSeats.Size = new Size(89, 32);
+            btnViewSeats.Size = new Size(127, 53);
             btnViewSeats.TabIndex = 125;
             btnViewSeats.Text = "View Seats";
             btnViewSeats.UseVisualStyleBackColor = false;
@@ -110,10 +107,9 @@
             btnResetSeats.BackColor = Color.Gainsboro;
             btnResetSeats.FlatStyle = FlatStyle.Popup;
             btnResetSeats.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnResetSeats.Location = new Point(674, 407);
-            btnResetSeats.Margin = new Padding(2);
+            btnResetSeats.Location = new Point(912, 529);
             btnResetSeats.Name = "btnResetSeats";
-            btnResetSeats.Size = new Size(89, 32);
+            btnResetSeats.Size = new Size(127, 53);
             btnResetSeats.TabIndex = 126;
             btnResetSeats.Text = "Reset Seats";
             btnResetSeats.UseVisualStyleBackColor = false;
@@ -122,9 +118,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(64, 57);
+            dataGridView1.Location = new Point(40, 85);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(699, 269);
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(999, 343);
             dataGridView1.TabIndex = 127;
             // 
             // userTableAdapter1
@@ -133,9 +131,9 @@
             // 
             // AdminPanel
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1066, 593);
             Controls.Add(dataGridView1);
             Controls.Add(btnResetSeats);
             Controls.Add(btnViewSeats);
@@ -143,8 +141,10 @@
             Controls.Add(btnViewUsers);
             Controls.Add(label1);
             Controls.Add(LogoutBtn);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "AdminPanel";
-            Text = "AdminPanel";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Smart Cinema Booking - Admin";
             Load += AdminPanel_Load_1;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

@@ -70,12 +70,13 @@ namespace EventDrivenProject
 
             if (user != null)
             {
-                Helper.db.Users.Remove(user);
-                Helper.db.SaveChanges();
-
-                MessageBox.Show("User deleted!");
-
-                dataGridView1.DataSource = Helper.db.Users.ToList();
+                if (MessageBox.Show("Are you sure want to delete?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Helper.db.Users.Remove(user);
+                    Helper.db.SaveChanges();
+                    MessageBox.Show("User deleted!");
+                }
+                LoadUsers();
             }
         }
 
@@ -100,18 +101,20 @@ namespace EventDrivenProject
 
         private void btnResetSeats_Click_1(object sender, EventArgs e)
         {
-            var seats = Helper.db.Seats
-                .Where(s => s.SeatType == "Booked")
-                .ToList();
-
-            foreach (var s in seats)
+            if (MessageBox.Show("Are you sure want to reset", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                s.SeatType = "Available";
+                var seats = Helper.db.Seats
+                    .Where(s => s.SeatType == "Booked")
+                    .ToList();
+
+                foreach (var s in seats)
+                {
+                    s.SeatType = "Available";
+                }
+
+                Helper.db.SaveChanges();
+                MessageBox.Show("Seats reset successfully!");
             }
-
-            Helper.db.SaveChanges();
-
-            MessageBox.Show("Seats reset successfully!");
         }
     }
 }

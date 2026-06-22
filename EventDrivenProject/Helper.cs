@@ -4,11 +4,6 @@ namespace EventDrivenProject
 {
     public static class Helper
     {
-        public static TicketcinemaContext db =
-            new TicketcinemaContext(
-                File.ReadAllText(
-                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Connection.txt")
-                )
-            );
+        public static TicketcinemaContext db = new TicketcinemaContext(File.ReadAllText("Connection.txt"));
     }
 }
