@@ -33,7 +33,7 @@ namespace EventDrivenProject
         }
         private void Seat_CheckedChanged(object sender, EventArgs e)
         {
-            if (isLoading) return; // 🔥 BLOCK AUTO TRIGGERS
+            if (isLoading) return;
 
             CheckBox cb = sender as CheckBox;
             if (cb == null || !cb.Enabled) return;
@@ -111,10 +111,26 @@ namespace EventDrivenProject
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var selectedSeats = Helper.db.Seats
+                .Where(s => s.HallId == hallId && s.SeatType == "Selected")
+                .ToList();
+
+            foreach (var seat in selectedSeats)
+            {
+                seat.SeatType = "Available";
+            }
+
+            Helper.db.SaveChanges();
+
             this.Close();
         }
 
         private void seatA4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void redlbl_Click(object sender, EventArgs e)
         {
 
         }

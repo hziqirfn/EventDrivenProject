@@ -18,6 +18,28 @@ namespace EventDrivenProject
         {
             InitializeComponent();
             this.hallId = hallId;
+            this.Load += Payment_Load;
+        }
+
+        private void Payment_Load(object sender, EventArgs e)
+        {
+            var selectedSeats = Helper.db.Seats
+                .Where(s => s.HallId == hallId && s.SeatType == "Selected")
+                .ToList();
+
+            if (selectedSeats.Count == 0)
+            {
+                CalculateTxt.Text = "(RM0.00 x 0 Seat)";
+                TotalTxt.Text = "RM0.00";
+                return;
+            }
+
+            int seatCount = selectedSeats.Count;
+            decimal total = selectedSeats.Sum(s => (decimal?)s.Price) ?? 0;
+            decimal pricePerSeat = (decimal)selectedSeats.First().Price;
+
+            CalculateTxt.Text = $"(RM{pricePerSeat:0.00} x {seatCount} Seat)";
+            TotalTxt.Text = $"RM{total:0.00}";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -104,9 +126,26 @@ namespace EventDrivenProject
 
         private void ConfirmBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(NameTxtBox.Text) ||
+                string.IsNullOrWhiteSpace(CardNumTxtBox.Text) ||
+                string.IsNullOrWhiteSpace(ExpTxtBox.Text) ||
+                string.IsNullOrWhiteSpace(CVCTxtBox.Text))
+            {
+                MessageBox.Show("Please fill in all payment details.");
+                return;
+            }
+
             var selectedSeats = Helper.db.Seats
                 .Where(s => s.HallId == hallId && s.SeatType == "Selected")
                 .ToList();
+
+            if (selectedSeats.Count == 0)
+            {
+                MessageBox.Show("Please select at least one seat.");
+                return;
+            }
+
+            decimal total = selectedSeats.Select(s => (decimal?)s.Price).Sum() ?? 0;
 
             foreach (var seat in selectedSeats)
             {
@@ -115,21 +154,20 @@ namespace EventDrivenProject
 
             Helper.db.SaveChanges();
 
-            MessageBox.Show("Booking Confirmed!", "Success",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(
+                $"Payment Successful!\nTotal Amount: RM {total:0.00}\nBooking Confirmed.");
 
             this.Close();
 
             var seatForm = Application.OpenForms["SelectSeat"];
             seatForm?.Close();
-
-            SelectSeat newSeatForm = new SelectSeat(hallId);
-            newSeatForm.Show();
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+            SelectSeat newSeatForm = new SelectSeat(hallId);
+            newSeatForm.Show();
         }
     }
 }

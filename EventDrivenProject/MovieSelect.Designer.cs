@@ -35,6 +35,7 @@
             lblmoviename = new Label();
             btnnext = new Button();
             btnprev = new Button();
+            LogoutBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbmovie).BeginInit();
             SuspendLayout();
@@ -42,6 +43,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(LogoutBtn);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
@@ -121,6 +123,20 @@
             btnprev.UseVisualStyleBackColor = true;
             btnprev.Click += btnprev_Click;
             // 
+            // LogoutBtn
+            // 
+            LogoutBtn.BackColor = Color.Gainsboro;
+            LogoutBtn.FlatStyle = FlatStyle.Popup;
+            LogoutBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LogoutBtn.Location = new Point(645, 11);
+            LogoutBtn.Margin = new Padding(2);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Size = new Size(89, 32);
+            LogoutBtn.TabIndex = 118;
+            LogoutBtn.Text = "Logout";
+            LogoutBtn.UseVisualStyleBackColor = false;
+            LogoutBtn.Click += LogoutBtn_Click;
+            // 
             // MovieSelect
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -154,6 +170,6 @@
         private Label label3;
         private Label label2;
         private Label lblmoviename;
-      
+        private Button LogoutBtn;
     }
 }

@@ -17,7 +17,7 @@ namespace EventDrivenProject
         int currentIndex = 0;
         public MovieSelect()
         {
-            InitializeComponent();   
+            InitializeComponent();
 
             movies = new List<Movie>
     {
@@ -68,7 +68,7 @@ namespace EventDrivenProject
 
             currentIndex = 0;
             UpdateMovie();
-            }
+        }
 
 
         private void UpdateMovie()
@@ -139,6 +139,13 @@ namespace EventDrivenProject
         private void pbmovie_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
         }
     }
 }

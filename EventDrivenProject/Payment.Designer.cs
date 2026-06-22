@@ -36,6 +36,9 @@
             CVCTxtBox = new TextBox();
             NameTxtBox = new TextBox();
             groupBox1 = new GroupBox();
+            CalculateTxt = new Label();
+            TotalTxt = new Label();
+            label1 = new Label();
             PicBoxName = new PictureBox();
             PicBoxCVC = new PictureBox();
             PicBoxExp = new PictureBox();
@@ -130,6 +133,9 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.WhiteSmoke;
+            groupBox1.Controls.Add(CalculateTxt);
+            groupBox1.Controls.Add(TotalTxt);
+            groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(PicBoxName);
             groupBox1.Controls.Add(PicBoxCVC);
             groupBox1.Controls.Add(PicBoxExp);
@@ -143,10 +149,37 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(16, 68);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(606, 284);
+            groupBox1.Size = new Size(606, 307);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // CalculateTxt
+            // 
+            CalculateTxt.AutoSize = true;
+            CalculateTxt.Location = new Point(497, 252);
+            CalculateTxt.Name = "CalculateTxt";
+            CalculateTxt.Size = new Size(12, 15);
+            CalculateTxt.TabIndex = 15;
+            CalculateTxt.Text = "-";
+            // 
+            // TotalTxt
+            // 
+            TotalTxt.AutoSize = true;
+            TotalTxt.Location = new Point(497, 277);
+            TotalTxt.Name = "TotalTxt";
+            TotalTxt.Size = new Size(12, 15);
+            TotalTxt.TabIndex = 14;
+            TotalTxt.Text = "-";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(455, 252);
+            label1.Name = "label1";
+            label1.Size = new Size(36, 15);
+            label1.TabIndex = 13;
+            label1.Text = "Total:";
             // 
             // PicBoxName
             // 
@@ -281,5 +314,8 @@
         private PictureBox PicBoxCardNum;
         private Button ConfirmBtn;
         private Button BackBtn;
+        private Label CalculateTxt;
+        private Label TotalTxt;
+        private Label label1;
     }
 }

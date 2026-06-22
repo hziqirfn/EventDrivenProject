@@ -550,10 +550,11 @@
             redlbl.Name = "redlbl";
             redlbl.Size = new Size(22, 19);
             redlbl.TabIndex = 111;
+            redlbl.Click += redlbl_Click;
             // 
             // greenlbl
             // 
-            greenlbl.BackColor = Color.ForestGreen;
+            greenlbl.BackColor = Color.Yellow;
             greenlbl.Font = new Font("Segoe UI", 9F);
             greenlbl.Location = new Point(129, 308);
             greenlbl.Name = "greenlbl";
