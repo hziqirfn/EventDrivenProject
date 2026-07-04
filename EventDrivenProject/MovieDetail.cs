@@ -84,5 +84,10 @@ namespace EventDrivenProject
         {
             this.Close();
         }
+
+        private void Hallidlabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -71,6 +71,7 @@
             Hallidlabel.Size = new Size(32, 19);
             Hallidlabel.TabIndex = 18;
             Hallidlabel.Text = "text";
+            Hallidlabel.Click += Hallidlabel_Click;
             // 
             // label2
             // 

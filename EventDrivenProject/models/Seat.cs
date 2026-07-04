@@ -7,6 +7,8 @@ public partial class Seat
 {
     public int SeatId { get; set; }
 
+    public int CinemaId { get; set; }
+
     public int HallId { get; set; }
 
     public string SeatNumber { get; set; } = null!;

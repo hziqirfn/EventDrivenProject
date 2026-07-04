@@ -15,11 +15,17 @@ namespace EventDrivenProject
     {
         private bool isLoading = false;
         private int hallId;
+        private int cinemaId;
+        private int showId;
+        private string cinemaName;
 
-        public SelectSeat(int hallId)
+        public SelectSeat(int cinemaId, int hallId, string cinemaName, int showId)
         {
             InitializeComponent();
             this.hallId = hallId;
+            this.cinemaId = cinemaId;
+            this.cinemaName = cinemaName;
+            this.showId = showId;
             this.Name = "SelectSeat";
             UpdateMovieHall();
         }
@@ -29,6 +35,7 @@ namespace EventDrivenProject
         }
         private void UpdateMovieHall()
         {
+            CinemaNameTxt.Text = cinemaName;
             HallidTextSelectSeat.Text = hallId.ToString();
         }
         private void Seat_CheckedChanged(object sender, EventArgs e)
@@ -70,8 +77,8 @@ namespace EventDrivenProject
             }
 
             var seats = Helper.db.Seats
-                .Where(s => s.HallId == hallId)
-                .ToList();
+                    .Where(s => s.HallId == hallId && s.CinemaId == cinemaId)
+                    .ToList();
 
             foreach (var seat in seats)
             {
@@ -105,7 +112,7 @@ namespace EventDrivenProject
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form paymentForm = new Payment(hallId);
+            Form paymentForm = new Payment(hallId, cinemaId, showId, cinemaName);
             paymentForm.Show();
         }
 

@@ -69,6 +69,8 @@
             button1 = new Button();
             label4 = new Label();
             HallidTextSelectSeat = new Label();
+            label5 = new Label();
+            CinemaNameTxt = new Label();
             SuspendLayout();
             // 
             // seatC8
@@ -623,7 +625,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 9);
+            label4.Location = new Point(12, 35);
             label4.Name = "label4";
             label4.Size = new Size(47, 15);
             label4.TabIndex = 118;
@@ -633,17 +635,39 @@
             // 
             HallidTextSelectSeat.AutoSize = true;
             HallidTextSelectSeat.Font = new Font("Segoe UI", 9F);
-            HallidTextSelectSeat.Location = new Point(65, 9);
+            HallidTextSelectSeat.Location = new Point(65, 35);
             HallidTextSelectSeat.Name = "HallidTextSelectSeat";
             HallidTextSelectSeat.Size = new Size(12, 15);
             HallidTextSelectSeat.TabIndex = 119;
             HallidTextSelectSeat.Text = "-";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(12, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(87, 15);
+            label5.TabIndex = 120;
+            label5.Text = "Cinema Name:";
+            // 
+            // CinemaNameTxt
+            // 
+            CinemaNameTxt.AutoSize = true;
+            CinemaNameTxt.Font = new Font("Segoe UI", 9F);
+            CinemaNameTxt.Location = new Point(104, 9);
+            CinemaNameTxt.Name = "CinemaNameTxt";
+            CinemaNameTxt.Size = new Size(12, 15);
+            CinemaNameTxt.TabIndex = 121;
+            CinemaNameTxt.Text = "-";
             // 
             // SelectSeat
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(746, 356);
+            Controls.Add(CinemaNameTxt);
+            Controls.Add(label5);
             Controls.Add(HallidTextSelectSeat);
             Controls.Add(label4);
             Controls.Add(button1);
@@ -737,5 +761,7 @@
         private Button button1;
         private Label label4;
         private Label HallidTextSelectSeat;
+        private Label label5;
+        private Label CinemaNameTxt;
     }
 }

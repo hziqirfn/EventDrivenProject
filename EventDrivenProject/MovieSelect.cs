@@ -45,7 +45,7 @@ namespace EventDrivenProject
 
         new Movie
         {
-            MovieId = 4,
+            MovieId = 3,
             Title = "The Sheep Detectives",
             Genre = "Comedy / Mystery",
             Duration = "1h 50m",
@@ -56,7 +56,7 @@ namespace EventDrivenProject
 
         new Movie
         {
-            MovieId = 8,
+            MovieId = 4,
             Title = "The Super Mario Galaxy Movie",
             Genre = "Animation / Adventure / Sci-Fi",
             Duration = "1h 58m",

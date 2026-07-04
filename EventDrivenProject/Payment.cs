@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventDrivenProject.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,15 @@ namespace EventDrivenProject
     public partial class Payment : Form
     {
         private int hallId;
+        private int cinemaId;
+        private int showId;
+        private string cinemaName;
 
-        public Payment(int hallId)
+        public Payment(int hallId, int cinemaId, int showId, string cinemaName)
         {
+            this.cinemaId = cinemaId;
+            this.showId = showId;
+            this.cinemaName = cinemaName;
             InitializeComponent();
             this.hallId = hallId;
             this.Load += Payment_Load;
@@ -166,7 +173,7 @@ namespace EventDrivenProject
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            SelectSeat newSeatForm = new SelectSeat(hallId);
+            SelectSeat newSeatForm = new SelectSeat(cinemaId, hallId, cinemaName, showId);
             newSeatForm.Show();
         }
     }

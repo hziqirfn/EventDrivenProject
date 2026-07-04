@@ -1,4 +1,5 @@
 ﻿using EventDrivenProject.models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,17 @@ namespace EventDrivenProject
 {
     public partial class BuyTicket : Form
     {
+        private int cinemaId;
+        private int hallId;
+        private int movieId;
         private int showId;
-        public BuyTicket(int id)
+        private string cinemaName;
+        public BuyTicket(int movieId)
         {
             InitializeComponent();
-            showId = id;
+            this.movieId = movieId;
             LoadMovies();
+            button2.Visible = false;
         }
 
         private void LoadMovies()
@@ -37,20 +43,36 @@ namespace EventDrivenProject
             if (e.RowIndex == -1) return;
 
             var data = dataGridView3.Rows[e.RowIndex].DataBoundItem as Cinema;
+            cinemaId = data.CinemaId;
 
-            if (e.RowIndex >= 0)
-            {
-                label9.Text = data.CinemaName;
-                label8.Text = data.Location;
-                panel2.Visible = true;
+            CinemaIdTxt.Text = data.CinemaId.ToString();
+            label9.Text = data.CinemaName;
+            label8.Text = data.Location;
 
-                var date = Helper.db.ShowTimes.ToList();
-                var applyDate = date.Where(x => x.MovieId == showId).ToList();
-                dataGridView1.DataSource = applyDate;
+            panel2.Visible = true;
 
-                label2.Visible = true;
-                dataGridView1.Visible = true;
-            }
+            dataGridView1.DataSource = null;
+            dataGridView2.DataSource = null;
+
+            label2.Visible = true;
+            label3.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+            button2.Visible = false;
+
+            int currentMovieId = movieId;
+            int currentCinemaId = cinemaId;
+
+            var applyDate = (from st in Helper.db.ShowTimes
+                            join h in Helper.db.Halls on st.HallId equals h.HallId
+                            where st.MovieId == currentMovieId
+                               && h.CinemaId == currentCinemaId
+                            select st
+                        ).ToList();
+
+            dataGridView1.DataSource = applyDate;
+            dataGridView1.Visible = true;
+            cinemaName = data.CinemaName;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -58,21 +80,26 @@ namespace EventDrivenProject
             if (e.RowIndex == -1) return;
 
             var data = dataGridView1.Rows[e.RowIndex].DataBoundItem as ShowTime;
+            showId = data.ShowTimeId;
 
-            if (e.RowIndex >= 0)
-            {
-                label11.Text = data.ShowDate.ToString();
-                label13.Text = data.StartTime.ToString();
-                label19.Text = data.EndTime.ToString();
-                panel3.Visible = true;
+            label11.Text = data.ShowDate.ToString();
+            label13.Text = data.StartTime.ToString();
+            label19.Text = data.EndTime.ToString();
 
-                var date = Helper.db.Halls.ToList();
-                var applyHall = date.Where(x => x.RoomNumber == data.HallId).ToList();
-                dataGridView2.DataSource = applyHall;
+            panel3.Visible = true;
 
-                label3.Visible = true;
-                dataGridView2.Visible = true;
-            }
+            var availableHalls = (
+                                from st in Helper.db.ShowTimes
+                                join h in Helper.db.Halls on st.HallId equals h.HallId
+                                where st.MovieId == movieId
+                                   && h.CinemaId == cinemaId
+                                select h
+                            ).Distinct().ToList();
+
+            dataGridView2.DataSource = availableHalls;
+
+            label3.Visible = true;
+            dataGridView2.Visible = true;
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -81,19 +108,33 @@ namespace EventDrivenProject
 
             var data = dataGridView2.Rows[e.RowIndex].DataBoundItem as Hall;
 
+            hallId = data.HallId;
+
             if (e.RowIndex >= 0)
             {
+                HallIdTxt.Text = hallId.ToString();
                 label17.Text = data.HallName;
                 label21.Text = data.HallType;
                 label15.Text = data.TotalSeats.ToString();
                 panel4.Visible = true;
+                button2.Visible = true;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SelectSeat seat = new SelectSeat(showId);
+            SelectSeat seat = new SelectSeat(cinemaId, hallId, cinemaName, showId);
             seat.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
