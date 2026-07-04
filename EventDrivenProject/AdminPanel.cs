@@ -70,12 +70,13 @@ namespace EventDrivenProject
 
             if (user != null)
             {
-                Helper.db.Users.Remove(user);
-                Helper.db.SaveChanges();
-
-                MessageBox.Show("User deleted!");
-
-                dataGridView1.DataSource = Helper.db.Users.ToList();
+                if (MessageBox.Show("Are you sure want to delete?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Helper.db.Users.Remove(user);
+                    Helper.db.SaveChanges();
+                    MessageBox.Show("User deleted!");
+                }
+                LoadUsers();
             }
         }
 
